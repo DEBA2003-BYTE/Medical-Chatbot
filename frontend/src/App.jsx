@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import "./App.css";
-import dotenv from dotenv
+
 
 function App() {
   const [messages, setMessages] = useState([]);
@@ -9,7 +9,6 @@ function App() {
   const [loading, setLoading] = useState(false);
 
 
-const BACKEND_URI = process.dotenv.BACKEND_URI
 
   const sendMessage = async () => {
     if (!input.trim()) return;
