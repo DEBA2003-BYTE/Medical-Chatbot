@@ -1,11 +1,15 @@
 import { useState } from "react";
 import axios from "axios";
 import "./App.css";
+import dotenv from dotenv
 
 function App() {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
+
+
+const BACKEND_URI = process.dotenv.BACKEND_URI
 
   const sendMessage = async () => {
     if (!input.trim()) return;
@@ -16,7 +20,7 @@ function App() {
     setLoading(true);
 
     try {
-      const response = await axios.post("http://localhost:5000/chat", { message: input });
+      const response = await axios.post("https://medical-chatbot-3x3y.vercel.app/chat", { message: input });
 
       const botMessage = {
         sender: "bot",

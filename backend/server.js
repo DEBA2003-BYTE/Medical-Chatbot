@@ -10,6 +10,13 @@ app.use(bodyParser.json());
 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 
+
+app.get("/",(req,res)=>
+{ const message = "hello"
+  res.json(message)
+}
+)
+
 app.post("/chat", async (req, res) => {
   const userMessage = req.body.message;
 
